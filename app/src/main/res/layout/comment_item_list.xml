@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="comment" type="com.example.github.model.CommentsModel"/>
+    </data>
+    <androidx.cardview.widget.CardView
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_margin="16dp"
+            android:layout_height="wrap_content">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:id="@+id/userImage"
+                    android:layout_gravity="center"
+                    android:imageUrl="@{comment.user.avatar_url}"
+                    android:layout_margin="16dp"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:textSize="16dp"
+                        android:text="@{comment.user.login}"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:id="@+id/body"
+                        android:text="@{comment.body}"
+                        android:inputType="textMultiLine"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="6dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
